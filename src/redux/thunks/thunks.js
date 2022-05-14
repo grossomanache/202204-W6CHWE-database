@@ -1,4 +1,4 @@
-import { loadRobotsActionCreator } from "../features/robots/robotsSlice";
+const { loadRobotsActionCreator } = require("../features/robots/robotsSlice");
 
 export const loadRobotsThunk = async (dispatch) => {
   const response = await fetch(process.env.REACT_APP_API_URL);
