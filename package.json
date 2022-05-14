@@ -1,7 +1,7 @@
 {
   "name": "front",
   "jest": {
-    "testPathIgnorePatterns": [
+    "watchPathIgnorePatterns": [
       "src/reportWebVitals.js"
     ]
   },
