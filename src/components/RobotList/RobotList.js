@@ -14,7 +14,7 @@ const RobotList = () => {
   const dispatch = useDispatch();
   const robots = useSelector((state) => state.robots);
   useEffect(() => {
-    dispatch(loadRobotsThunk);
+    dispatch(loadRobotsThunk());
   }, [dispatch]);
 
   return (

@@ -8,8 +8,8 @@ jest.mock("react-redux", () => ({
   ...jest.requireActual("react-redux"),
   useSelector: () => {
     return [
-      { id: 1, name: "Cosa fake para hacer 1", done: false },
-      { id: 2, name: "Cosa fake para hacer 2", done: false },
+      { _id: 1, name: "Cosa fake para hacer 1", done: false },
+      { _id: 2, name: "Cosa fake para hacer 2", done: false },
     ];
   },
   useDispatch: () => {
