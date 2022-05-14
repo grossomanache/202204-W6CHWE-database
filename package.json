@@ -1,8 +1,8 @@
 {
   "name": "front",
   "jest": {
-    "testPathIgnorePatterns": [
-      "src/reportWebVitals.js"
+    "coveragePathIgnorePatterns": [
+      "src/reportWebVitals*"
     ]
   },
   "version": "0.1.0",
@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "husky": "^7.0.0"
+    "husky": "^7.0.0",
+    "msw": "^0.39.2"
   }
 }
