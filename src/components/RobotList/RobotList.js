@@ -6,6 +6,8 @@ import Robot from "../Robot/Robot";
 
 const StyledContainer = styled.ul`
   font-size: 20px;
+  list-style-type: none;
+  padding: 0;
 `;
 
 const RobotList = () => {
@@ -18,7 +20,7 @@ const RobotList = () => {
   return (
     <StyledContainer>
       {robots.map((robot) => (
-        <Robot robot={robot} />
+        <Robot robot={robot} key={robot._id} />
       ))}
     </StyledContainer>
   );
