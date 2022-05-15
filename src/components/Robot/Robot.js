@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledContainer = styled.li`
   font-size: 20px;
@@ -7,15 +8,17 @@ const StyledContainer = styled.li`
   margin: 20px 50px;
   img {
     width: 100%;
+    padding-bottom: 80px;
   }
 `;
 
-const Robot = ({ robot: { name, url, creation } }) => {
+const Robot = ({ robot: { name, url, creation, _id } }) => {
   return (
     <StyledContainer>
       <h2>{name}</h2>
-      <img alt="robot" src={url} />
-      <h3>Creation date: {creation.slice(0, 10)}</h3>
+      <Link to={`/detail/${_id}`}>
+        <img alt="robot" src={url} />
+      </Link>
     </StyledContainer>
   );
 };
