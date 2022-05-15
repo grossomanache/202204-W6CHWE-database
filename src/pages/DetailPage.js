@@ -36,7 +36,7 @@ const DetailPage = () => {
 
   return (
     <StyledContainer>
-      <Link to="/home">
+      <Link to="/">
         <h1>Crazy robots living the fast life</h1>
       </Link>
       {robot && <DetailedRobot robot={robot} />}
