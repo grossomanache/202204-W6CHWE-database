@@ -1,9 +1,5 @@
 import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import DetailedRobot from "../components/DetailedRobot/DetailedRobot";
-import { useEffect } from "react";
-import { loadRobotByIdThunk } from "../redux/thunks/thunks";
+import { Link } from "react-router-dom";
 import Form from "../components/Form/Form";
 
 const StyledContainer = styled.div`
