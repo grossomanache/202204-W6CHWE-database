@@ -14,7 +14,7 @@ const StyledContainer = styled.li`
 
 const Robot = ({ robot: { name, url, creation, _id } }) => {
   return (
-    <StyledContainer>
+    <StyledContainer key={_id}>
       <h2>{name}</h2>
       <Link to={`/detail/${_id}`}>
         <img alt="robot" src={url} />
