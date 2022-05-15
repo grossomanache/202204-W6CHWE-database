@@ -6,21 +6,10 @@ import { useEffect } from "react";
 import { loadRobotByIdThunk } from "../redux/thunks/thunks";
 
 const StyledContainer = styled.div`
-  background-color: floralwhite;
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  h1 {
-    padding: 20px 0;
-    margin: 0;
-  }
+  height: 100vh;
   a {
     text-decoration: none;
-    &:visited {
-      color: black;
-    }
-  }
-  footer {
-    padding: 20px 0;
+    color: black;
   }
 `;
 

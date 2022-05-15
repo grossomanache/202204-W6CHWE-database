@@ -1,24 +1,24 @@
 import RobotList from "../components/RobotList/RobotList";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const StyledContainer = styled.div`
-  background-color: floralwhite;
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  h1 {
-    padding: 20px 0;
-    margin: 0;
-  }
-  footer {
-    padding: 20px 0;
+  button {
+    font-size: 20px;
   }
 `;
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const redirectToForm = () => {
+    navigate("add-robot");
+  };
+
   return (
     <StyledContainer>
       <div className="App">
         <h1>Crazy robots living the fast life</h1>
+        <button onClick={redirectToForm}>Add new robot</button>
         <RobotList />
         <footer>Created by Stelios</footer>
       </div>
