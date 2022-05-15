@@ -1,6 +1,6 @@
 const mockRobots = [
   {
-    id: 1,
+    _id: 1,
     name: "Larry the Boy",
     speed: 7,
     resistance: 6,
@@ -9,7 +9,7 @@ const mockRobots = [
     description: "Entrepeneur",
   },
   {
-    id: 2,
+    _id: 2,
     name: "Cameron Audio",
     speed: 7,
     resistance: 6,

@@ -39,7 +39,8 @@ const DetailPage = () => {
       <Link to="/home">
         <h1>Crazy robots living the fast life</h1>
       </Link>
-      <DetailedRobot robot={robot} />
+      {robot && <DetailedRobot robot={robot} />}
+
       <footer>Created by Stelios</footer>
     </StyledContainer>
   );
