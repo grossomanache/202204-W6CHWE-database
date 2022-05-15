@@ -6,6 +6,7 @@ const mockRobots = [
     resistance: 6,
     url: "test-url.com",
     creation: "1994-05-31T23:00:00.000Z",
+    description: "Entrepeneur",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const mockRobots = [
     resistance: 6,
     url: "test-url.com",
     creation: "1994-05-31T23:00:00.000Z",
+    description: "DJ",
   },
 ];
 

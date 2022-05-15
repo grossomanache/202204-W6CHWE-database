@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { Link, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import DetailedRobot from "../components/DetailedRobot/DetailedRobot";
+import { useEffect } from "react";
+import { loadRobotByIdThunk } from "../redux/thunks/thunks";
 
 const StyledContainer = styled.div`
   background-color: floralwhite;
@@ -25,9 +27,13 @@ const StyledContainer = styled.div`
 const DetailPage = () => {
   const startingIndex = useLocation().pathname.lastIndexOf("/");
   const robotId = useLocation().pathname.substring(startingIndex + 1);
-  const robot = useSelector((state) => state.robots).find(
-    (robot) => robot._id === robotId
-  );
+  const dispatch = useDispatch();
+
+  const robot = useSelector((state) => state.robots[0]);
+  useEffect(() => {
+    dispatch(loadRobotByIdThunk(robotId));
+  }, [dispatch, robotId]);
+
   return (
     <StyledContainer>
       <Link to="/home">
