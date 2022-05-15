@@ -24,7 +24,7 @@ const Robot = ({ robot: { name, url, creation, _id } }) => {
     <StyledContainer key={_id}>
       <h2>{name}</h2>
       <Link to={`/detail/${_id}`} onClick={resetRobots}>
-        <img alt="robot" src={url} />
+        <img alt="robot" src={url} height="100%" width="100%" />
       </Link>
     </StyledContainer>
   );

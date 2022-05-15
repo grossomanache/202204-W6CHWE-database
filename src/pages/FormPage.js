@@ -4,35 +4,33 @@ import { useDispatch, useSelector } from "react-redux";
 import DetailedRobot from "../components/DetailedRobot/DetailedRobot";
 import { useEffect } from "react";
 import { loadRobotByIdThunk } from "../redux/thunks/thunks";
+import Form from "../components/Form/Form";
 
 const StyledContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   a {
+    padding: 20px 0;
+    margin: 0;
     text-decoration: none;
-    color: black;
+    h1 {
+      margin: 0;
+    }
+    &:visited {
+      color: black;
+    }
   }
 `;
 
-const DetailPage = () => {
-  const startingIndex = useLocation().pathname.lastIndexOf("/");
-  const robotId = useLocation().pathname.substring(startingIndex + 1);
-  const dispatch = useDispatch();
-
-  const robot = useSelector((state) => state.robots[0]);
-  useEffect(() => {
-    dispatch(loadRobotByIdThunk(robotId));
-  }, [dispatch, robotId]);
-
+const FormPage = () => {
   return (
     <StyledContainer>
       <Link to="/">
         <h1>Crazy robots living the fast life</h1>
       </Link>
-      {robot && <DetailedRobot robot={robot} />}
-
+      <Form />
       <footer>Created by Stelios</footer>
     </StyledContainer>
   );
 };
 
-export default DetailPage;
+export default FormPage;
