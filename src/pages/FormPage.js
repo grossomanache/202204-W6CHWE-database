@@ -7,7 +7,7 @@ import { loadRobotByIdThunk } from "../redux/thunks/thunks";
 import Form from "../components/Form/Form";
 
 const StyledContainer = styled.div`
-  height: 100%;
+  height: 100vh;
   a {
     padding: 20px 0;
     margin: 0;
