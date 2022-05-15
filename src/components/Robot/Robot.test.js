@@ -1,4 +1,5 @@
 import { screen, render } from "@testing-library/react";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import { mockRobots } from "../../redux/mocks/mockRobots";
@@ -9,9 +10,11 @@ describe("Given the Robot component", () => {
     test("Then its name will be rendered on screen", () => {
       const mockRobot = mockRobots[0];
       render(
-        <BrowserRouter>
-          <Robot robot={mockRobot} />
-        </BrowserRouter>
+        <Provider>
+          <BrowserRouter>
+            <Robot robot={mockRobot} />
+          </BrowserRouter>
+        </Provider>
       );
 
       const expectedText = `${mockRobot.name}`;

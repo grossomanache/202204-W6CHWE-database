@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import DetailPage from "./pages/DetailPage";
 import HomePage from "./pages/HomePage";
 
@@ -6,8 +6,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/detail/:id" element={<DetailPage />} />
       </Routes>
     </>
