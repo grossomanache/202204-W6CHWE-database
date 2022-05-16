@@ -17,7 +17,7 @@ const DetailPage = () => {
   const robotId = useLocation().pathname.substring(startingIndex + 1);
   const dispatch = useDispatch();
 
-  const robot = useSelector((state) => state.robots[0]);
+  const robot = useSelector((state) => state.robots.collection[0]);
   useEffect(() => {
     dispatch(loadRobotByIdThunk(robotId));
   }, [dispatch, robotId]);

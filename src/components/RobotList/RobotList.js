@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
+import {
+  addRobotActionCreator,
+  modifyPropertyActionCreator,
+} from "../../redux/features/robots/robotsSlice";
 import { loadRobotsThunk } from "../../redux/thunks/thunks";
 import Robot from "../Robot/Robot";
 
@@ -12,7 +16,7 @@ const StyledContainer = styled.ul`
 
 const RobotList = () => {
   const dispatch = useDispatch();
-  const robots = useSelector((state) => state.robots);
+  const { collection: robots } = useSelector((state) => state.robots);
   useEffect(() => {
     dispatch(loadRobotsThunk());
   }, [dispatch]);
