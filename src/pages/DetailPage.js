@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { loadRobotByIdThunk } from "../redux/thunks/thunks";
 
 const StyledContainer = styled.div`
-  height: 100vh;
   a {
     text-decoration: none;
     color: black;
