@@ -5,6 +5,7 @@ const StyledContainer = styled.div`
   background-color: lightblue;
   border: 2px grey solid;
   margin: 20px 50px;
+  height: auto;
   img {
     width: 100%;
   }
