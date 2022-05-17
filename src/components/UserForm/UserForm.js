@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginActionCreator } from "../../redux/features/robots/userSlice";
 
 const UserForm = () => {
   const initialFields = { username: "", password: "" };
   const [formInformation, setFormInformation] = useState(initialFields);
+  const dispatch = useDispatch();
 
   const changeData = (event) => {
     setFormInformation({
@@ -11,8 +14,13 @@ const UserForm = () => {
     });
   };
 
+  const submitForm = (event) => {
+    event.preventDefault();
+    dispatch(loginActionCreator(formInformation));
+  };
+
   return (
-    <form autoComplete="off" noValidate>
+    <form autoComplete="off" noValidate onSubmit={submitForm}>
       <label>
         Name:{" "}
         <input
