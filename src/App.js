@@ -3,13 +3,12 @@ import DetailPage from "./pages/DetailPage";
 import HomePage from "./pages/HomePage";
 import FormPage from "./pages/FormPage";
 import styled from "styled-components";
-import { useEffect } from "react";
 
 const StyledContainer = styled.div`
   background-color: floralwhite;
   font-family: "Roboto", sans-serif;
   text-align: center;
-  height: 100%;
+  height: 100vh;
   h1 {
     padding: 20px 0;
     margin: 0;
@@ -20,10 +19,6 @@ const StyledContainer = styled.div`
 `;
 
 function App() {
-  useEffect(() => {
-    localStorage.setItem("token", "");
-  }, []);
-
   return (
     <>
       <StyledContainer>
