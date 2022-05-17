@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { validateUserThunk } from "../../redux/thunks/thunks";
+import { loadRobotsThunk, validateUserThunk } from "../../redux/thunks/thunks";
 
 const UserForm = () => {
   const initialFields = { username: "", password: "" };
@@ -17,10 +17,13 @@ const UserForm = () => {
   const submitForm = (event) => {
     event.preventDefault();
     dispatch(validateUserThunk(formInformation));
+    setFormInformation(initialFields);
+    dispatch(loadRobotsThunk());
   };
 
   const logout = (event) => {
     event.preventDefault();
+    localStorage.setItem("token", "");
   };
 
   return (
@@ -44,7 +47,7 @@ const UserForm = () => {
         />
       </label>
       <button type="submit">Login</button>
-      <button onSubmit={logout}>Logout</button>
+      <button onClick={logout}>Logout</button>
     </form>
   );
 };
