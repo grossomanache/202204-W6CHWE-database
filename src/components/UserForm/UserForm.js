@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { loginActionCreator } from "../../redux/features/robots/userSlice";
 import { validateUserThunk } from "../../redux/thunks/thunks";
 
 const UserForm = () => {
@@ -18,6 +17,10 @@ const UserForm = () => {
   const submitForm = (event) => {
     event.preventDefault();
     dispatch(validateUserThunk(formInformation));
+  };
+
+  const logout = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -41,7 +44,7 @@ const UserForm = () => {
         />
       </label>
       <button type="submit">Login</button>
-      <button>Logout</button>
+      <button onSubmit={logout}>Logout</button>
     </form>
   );
 };
