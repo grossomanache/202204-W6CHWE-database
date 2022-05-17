@@ -1,5 +1,7 @@
 import axios from "axios";
+import jwtDecode from "jwt-decode";
 import { loadRobotsActionCreator } from "../features/robots/robotsSlice";
+import { loginActionCreator } from "../features/robots/userSlice";
 
 const token = `Bearer ${process.env.REACT_APP_TOKEN}`;
 
@@ -27,4 +29,6 @@ export const validateUserThunk = (loginInformation) => async (dispatch) => {
   const route = `${process.env.REACT_APP_API_URL}/users/login`;
   const { data } = await axios.post(route, loginInformation);
   localStorage.setItem("token", data.token);
+  const userInfo = jwtDecode(data.token);
+  dispatch(loginActionCreator(userInfo));
 };
