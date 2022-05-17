@@ -1,10 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
-import {
-  addRobotActionCreator,
-  modifyPropertyActionCreator,
-} from "../../redux/features/robots/robotsSlice";
 import { loadRobotsThunk } from "../../redux/thunks/thunks";
 import Robot from "../Robot/Robot";
 
