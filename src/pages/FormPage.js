@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Form from "../components/Form/Form";
+import UserForm from "../components/UserForm/UserForm";
 
 const StyledContainer = styled.div`
   height: 100vh;
@@ -23,6 +24,7 @@ const FormPage = () => {
       <Link to="/">
         <h1>Crazy robots living the fast life</h1>
       </Link>
+      <UserForm />
       <Form />
       <footer>Created by Stelios</footer>
     </StyledContainer>
