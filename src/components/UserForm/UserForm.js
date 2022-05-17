@@ -3,6 +3,7 @@ import { useState } from "react";
 const UserForm = () => {
   const initialFields = { username: "", password: "" };
   const [formInformation, setFormInformation] = useState(initialFields);
+
   const changeData = (event) => {
     setFormInformation({
       ...formInformation,
@@ -30,6 +31,7 @@ const UserForm = () => {
           onChange={changeData}
         />
       </label>
+      <button type="submit">Login</button>
     </form>
   );
 };

@@ -3,6 +3,7 @@ import DetailPage from "./pages/DetailPage";
 import HomePage from "./pages/HomePage";
 import FormPage from "./pages/FormPage";
 import styled from "styled-components";
+import { useEffect } from "react";
 
 const StyledContainer = styled.div`
   background-color: floralwhite;
@@ -19,6 +20,10 @@ const StyledContainer = styled.div`
 `;
 
 function App() {
+  useEffect(() => {
+    localStorage.setItem("token", "");
+  }, []);
+
   return (
     <>
       <StyledContainer>

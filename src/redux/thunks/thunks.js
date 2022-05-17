@@ -3,7 +3,7 @@ import jwtDecode from "jwt-decode";
 import { loadRobotsActionCreator } from "../features/robots/robotsSlice";
 import { loginActionCreator } from "../features/robots/userSlice";
 
-const token = `Bearer ${process.env.REACT_APP_TOKEN}`;
+const token = `Bearer ${localStorage.getItem("token")}`;
 
 export const loadRobotsThunk = () => async (dispatch) => {
   const route = `${process.env.REACT_APP_API_URL}/robots`;
